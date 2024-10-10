@@ -1,0 +1,41 @@
+<div class="container product-details" *ngIf="product">
+  <div class="row">
+    <div class="col-md-6">
+      <img
+        [src]="product.image"
+        class="img-fluid"
+        alt="{{ product.name }}"
+      />
+    </div>
+    <div class="col-md-6">
+      <h1>{{ product.name }}</h1>
+      <h2>R$ {{ product.price.toFixed(2) }}</h2>
+      <p>{{ product.description }}</p>
+
+      <div class="form-group">
+        <label for="quantity">Quantidade:</label>
+        <input
+          type="number"
+          id="quantity"
+          [(ngModel)]="quantity"
+          name="quantity"
+          min="1"
+          class="form-control"
+        />
+      </div>
+
+      <button
+        class="btn btn-success"
+        (click)="addToCart(product)"
+      >
+        Adicionar ao Carrinho
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="!product">
+  <h2>Produto não encontrado.</h2>
+  <p>Desculpe, o produto que você está procurando não existe.</p>
+  <a routerLink="/" class="btn btn-primary">Voltar à Home</a>
+</div>

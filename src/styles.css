@@ -1,1 +1,223 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #f8f9fa; /* Cor de fundo suave */
+  font-family: 'Roboto', sans-serif; /* Fonte personalizada */
+}
+
+:root {
+  --primary-color: #ff6f61; /* Cor principal (laranja avermelhado) */
+  --secondary-color: #6c757d; /* Cor secundária */
+  --text-color: #343a40; /* Cor do texto */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: #f8f9fa !important;
+}
+
+/* Footer */
+footer {
+  background-color: var(--text-color);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+/* Botões */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+  border-color: darken(var(--primary-color), 10%);
+}
+
+/* Cartão de Produto */
+.card {
+  margin-bottom: 30px;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Página de Detalhes do Produto */
+.product-details .img-fluid {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.product-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.product-details h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.product-details .btn-success {
+  padding: 10px 30px;
+  font-size: 1.2rem;
+}
+
+/* Carrinho */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item img {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.cart-total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .product-details .img-fluid {
+    max-height: 300px;
+  }
+}
+.table th {
+  font-size: 1.2rem;
+}
+
+.table tbody tr:last-child th {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+/* Ajustes para imagens no carrinho */
+.table td img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Garantir que inputs de quantidade não quebrem o layout */
+.table td input[type="number"] {
+  max-width: 80px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 576px) {
+  .table thead {
+    display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 15px;
+  }
+
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+footer {
+  background-color: var(--text-color);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+main {
+  min-height: calc(100vh - 60px - 40px);
+}
+
+@media (max-width: 576px) {
+  .table td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group {
+    width: 100% !important;
+    max-width: 150px;
+  }
+
+  .input-group .form-control {
+    text-align: center;
+  }
+}
+
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
+

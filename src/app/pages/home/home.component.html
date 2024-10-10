@@ -1,0 +1,16 @@
+<!-- Banner -->
+<div class="jumbotron jumbotron-fluid" style="background-image: url('https://funko.com/on/demandware.static/-/Sites-FunkoUS-Library/default/dwb25299a2/images/funko/page-designer/hero/October%202024/Feature-Batman85th-Product-80686.png'); background-size: cover; color: #fff;">
+  <div class="container">
+    <h1 class="display-4">Bem-vindo à Funko Store</h1>
+    <p class="lead">Encontre os melhores Funkos Pop aqui!</p>
+  </div>
+</div>
+
+<!-- Lista de Produtos -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>
